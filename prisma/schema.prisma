@@ -14,29 +14,28 @@ datasource db {
 }
 
 model Item {
-  id        Int   @id @default(autoincrement())
-  name      String
-  category String
-  quantity  Int
+  id           Int    @id @default(autoincrement())
+  name         String
+  category     String
+  quantity     Int
   currentStock Int
-  minStock Int?
+  minStock     Int?
 
   movements Movement[]
 
   createdAt DateTime @default(now())
-  updatedAt      DateTime       @updatedAt
-
+  updatedAt DateTime @updatedAt
 }
 
 model Movement {
-  id           Int               @id @default(autoincrement())
-  itemId       Int
-  responsible  String
-  type         MovementType
-  quantity   Int
-  dateHour     DateTime          @default(now())
+  id          Int          @id @default(autoincrement())
+  itemId      Int
+  responsible String
+  type        MovementType
+  quantity    Int
+  dateHour    DateTime     @default(now())
 
-  item         Item              @relation(fields: [itemId], references: [id], onDelete: Restrict)
+  item Item @relation(fields: [itemId], references: [id], onDelete: Restrict)
 
   @@index([itemId])
   @@index([dateHour])
