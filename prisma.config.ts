@@ -19,3 +19,4 @@ export default defineConfig({
   // Prisma 7: NÃO definir datasource aqui quando usar adapter no runtime
   // O datasource deve vir EXCLUSIVAMENTE do schema.prisma
 })
+
