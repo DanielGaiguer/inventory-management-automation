@@ -1,15 +1,15 @@
 import { NextResponse } from "next/server";
-import { prisma } from "@/_lib/prisma";
+import { db } from "../../../_lib/prisma";
 
 export async function GET() {
-  const items = await prisma.item.findMany();
+  const items = await db.item.findMany();
   return NextResponse.json(items);
 }
 
 export async function POST(req: Request) {
   const body = await req.json();
 
-  const item = await prisma.item.create({
+  const item = await db.item.create({
     data: {
       name: body.name,
       quantity: body.quantity,
