@@ -3,7 +3,7 @@ import { PrismaClient, MovementType } from "@prisma/client";
 const prisma = new PrismaClient();
 
 async function main() {
-  // Limpa dados antigos
+  // Limpa dados antigos, 
   await prisma.movement.deleteMany();
   await prisma.item.deleteMany();
 
