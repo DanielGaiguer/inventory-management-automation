@@ -38,7 +38,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## Dados Neon Db
 
 host: localhost (ou do servidor)
+
 database: meu_banco
+
 user: usuario
+
 password: senha
+
 port: 5432
